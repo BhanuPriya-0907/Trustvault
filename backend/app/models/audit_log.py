@@ -20,12 +20,14 @@ class AuditLog(Base):
         Integer,
         ForeignKey("users.id"),
         nullable=True,
+        index=True,
     )
 
     document_id: Mapped[int | None] = mapped_column(
         Integer,
         ForeignKey("documents.id"),
         nullable=True,
+        index=True,
     )
 
     action: Mapped[str] = mapped_column(
